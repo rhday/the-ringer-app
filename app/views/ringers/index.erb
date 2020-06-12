@@ -1,0 +1,5 @@
+<ul>
+    <% @ringer.each do |r| %>
+    <li><a href="/ringer/<%= r.id %>"><%= r.name %></a></li>
+    <% end %>
+</ul>
