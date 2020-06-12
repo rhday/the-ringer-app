@@ -1,7 +1,7 @@
 class RingerController < ApplicationController
 
-    get '/' do 
-        @ringers = Ringer.all
+    get '/ringers' do 
+        @ringer = Ringer.all
         erb :"ringers/index"
     end 
 end 

@@ -2,7 +2,7 @@
 
 <h4>Ringers</h4>
 <ul>
-<% current_user.ringers.each do |r|%>
-    <li><a href="/ringer/<% r.id%>"<%= r.name%>></a></li>
+<% Ringer.all.each do |r|%>
+    <li><a href="/ringer/<% r.id%>"><%= r.name%></a></li>
 <% end %>
 </ul>
