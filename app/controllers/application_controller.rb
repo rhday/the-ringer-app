@@ -12,6 +12,26 @@ class ApplicationController < Sinatra::Base
         erb :welcome
     end 
 
+    post '/sessions' do
+        @user = User.find_by(email: params[:email], password: params[:password])
+        if @user
+          session[:user_id] = @user.id
+          redirect '/users/home'
+        end
+        puts params
+        redirect '/sessions/login'
+      end
+    
+      get '/sessions/logout' do
+        session.clear
+        redirect '/'
+      end
+
+      delete '/users/:id' do
+        @user = User.find_by_id(params[:id])
+        @user.delete
+      end
+
     helpers do
 
         def current_user

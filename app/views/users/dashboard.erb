@@ -1,8 +1,12 @@
 <h3>Welcome, <%= current_user.username %></h3>    
 
-<h4>Ringers</h4>
+
+
+<h4>Here are our list of Ringers:</h4>
 <ul>
 <% Ringer.all.each do |r|%>
     <li><a href="/ringer/<% r.id%>"><%= r.name%></a></li>
 <% end %>
 </ul>
+
+<a href="/sessions/logout">Log Out</a>
