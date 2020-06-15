@@ -1,9 +1,11 @@
 
 <h3><%=@ringer.name %></h3>
 
-<% if current_user.ringer.include?(@ringer) %>
+<% if !current_user.team.ringers.include?(@ringer) %>
     <form action="/ringer_teams" method="post">
         <input type="hidden" name="ringer_id" value="<%= @ringer.id %>%">
         <input type="submit" value="Hire this Ringer!">
     </form>
+    <%else%>
+        <p>You already hired this Ringer</p>
 <% end %>
