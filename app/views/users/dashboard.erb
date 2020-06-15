@@ -5,7 +5,7 @@
 <h4>Here are our list of Ringers:</h4>
 <ul>
 <% Ringer.all.each do |r|%>
-    <li><a href="/ringer/<% r.id%>"><%= r.name%></a></li>
+    <li><a href="/ringers/<%=r.id%>"><%= r.name%></a></li>
 <% end %>
 </ul>
 

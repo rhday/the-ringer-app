@@ -76,6 +76,7 @@ DEPENDENCIES
   activerecord
   bcrypt
   pry
+  rack
   rake
   require_all
   shotgun

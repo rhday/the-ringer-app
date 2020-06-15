@@ -1,3 +1,6 @@
+require "./config/environment"
+require "./app/models/user"
+
 class ApplicationController < Sinatra::Base
 
     configure do
@@ -33,6 +36,10 @@ class ApplicationController < Sinatra::Base
       end
 
     helpers do
+
+        def logged_in_redirect
+            redirect '/dashboard' if logged_in?
+        end
 
         def current_user
             User.find_by(id: session[:user_id]) 
