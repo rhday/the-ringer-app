@@ -31,5 +31,7 @@ class SessionsController < ApplicationController
             @error = "Invalid Input"
             erb :"sessions/login"
         end 
-    end 
+    end
+    
+    
 end 
