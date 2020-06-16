@@ -5,4 +5,5 @@ class UsersController < ApplicationController
         @u = current_user
         erb :"users/dashboard"
     end 
+    
 end

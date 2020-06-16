@@ -1,0 +1,17 @@
+<h3>Welcome, <%= current_user.username %></h3>    
+
+
+<h4>You have hired:</h4>
+
+<p><% @user.team.ringers.each do |r| %></p>
+    <p><%= r.name %></p> 
+    <% end %>
+
+<h4>Here are our list of Ringers:</h4>
+<ul>
+<% Ringer.all.each do |r|%>
+    <li><a href="/ringers/<%=r.id%>"><%= r.name%></a></li>
+<% end %>
+</ul>
+
+<a href="/sessions/logout">Log Out</a>
