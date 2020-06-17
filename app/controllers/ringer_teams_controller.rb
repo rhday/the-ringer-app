@@ -5,11 +5,18 @@ class RingerTeamsController < ApplicationController
          redirect '/dashboard'
     end
 
-    delete "/ringers/:id" do
-        Ringer.destroy(params[:id])
+    delete "/ringer_teams" do
+        rt = RingerTeam.find_by(ringer_id: params[:ringer_id], team: current_user.team)
+        rt.destroy
         redirect to "/dashboard"
-      end
+    end
 end
+
+
+    #<form action="/ringer_teams" method="post">
+    #    <input type="hidden" name="ringer_id" value="<%= @ringer.id %>%">
+    #    <input type="submit" value="Terminate contract">
+    #</form>
 
 #<form action="/ringer_teams" method="post">
 #<input type="hidden" name="ringer_id" value="<%= @ringer.id %>%">
