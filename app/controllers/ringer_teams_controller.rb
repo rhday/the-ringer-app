@@ -2,17 +2,13 @@ class RingerTeamsController < ApplicationController
 
     post '/ringer_teams' do
          current_user.team.ringers << Ringer.find(params[:ringer_id])
-         redirect '/updated_dashboard'
+         redirect '/dashboard'
     end
 
-    get '/updated_dashboard' do 
-        authenticate
-        @user = current_user 
-        #@ringer = Ringer.all
-        binding.pry
-        erb :"/users/updated_dashboard"
-    end 
-
+    delete "/ringers/:id" do
+        Ringer.destroy(params[:id])
+        redirect to "/dashboard"
+      end
 end
 
 #<form action="/ringer_teams" method="post">
