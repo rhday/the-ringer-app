@@ -34,9 +34,8 @@ class SessionsController < ApplicationController
     end
 
     delete '/logout' do 
-        binding.pry
         session.clear
-        redirect '/'
+        redirect '/login'
     end
 
     

@@ -19,6 +19,10 @@
 <% end %>
 </ul>
 
-<a href="/sessions/logout">Log Out</a>
+
+<form action="/logout" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Logout">
+</form>
 
 
