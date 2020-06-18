@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2020_06_10_135223) do
   create_table "ringer_teams", force: :cascade do |t|
     t.integer "ringer_id"
     t.integer "team_id"
+    t.datetime "game_day"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

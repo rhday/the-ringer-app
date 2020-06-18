@@ -4,6 +4,7 @@
 <% if !current_user.team.ringers.include?(@ringer) %>
     <form action="/ringer_teams" method="post">
         <input type="hidden" name="ringer_id" value="<%= @ringer.id %>%">
+        <input type="date">
         <input type="submit" value="Hire this Ringer!">
     </form>
     <%else%>
