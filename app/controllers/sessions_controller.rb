@@ -34,8 +34,16 @@ class SessionsController < ApplicationController
     end
 
     delete '/logout' do 
+        binding.pry
         session.clear
-    else 
-    
+        redirect '/'
+    end
+
     
 end 
+
+#<form action="/logout" method="post">
+#    <input type="hidden" name="_method" value="delete">
+#    <input type="hidden" name="user" value="<%= user.session %>%">
+#    <input type="submit" value="Logout">
+#</form>

@@ -1,5 +1,16 @@
 <h1>Enter below!</h1>
 
-<a href="/login">Log In</a>
-<a href="/signup">Sign Up</a>
+<form action="/login" method="post">
+    <input type="text" placeholder="Username:" name="username">
+    <input type="password" placeholder= "Password:" name="password">
+    <input type="submit" value="Log In">
+</form>
+
+<form action="/signup" method="post">
+    <input type="text" placeholder="Username" name="username">
+    <input type="password" placeholder="Password" name="password">
+    <input type="text" placeholder= "Team Name:" name="teamname">
+    <input type="submit" value="Sign Up">
+</form>
+
 

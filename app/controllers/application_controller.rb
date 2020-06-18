@@ -30,11 +30,6 @@ class ApplicationController < Sinatra::Base
         redirect '/'
       end
 
-      delete '/users/:id' do
-        @user = User.find_by_id(params[:id])
-        @user.delete
-      end
-
     helpers do
 
         def logged_in_redirect
