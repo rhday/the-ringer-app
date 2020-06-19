@@ -1,7 +1,7 @@
 class RingerTeamsController < ApplicationController
 
     post '/ringer_teams' do
-         current_user.team.ringers << Ringer.find(params[:ringer_id])
+        RingerTeam.create(team: current_user.team, ringer: Ringer.find(params[:ringer_id]), game_day: Date.parse(params[:game_day]) )
          redirect '/dashboard'
     end
 

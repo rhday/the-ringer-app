@@ -7,6 +7,7 @@ class RingerController < ApplicationController
 
     get'/ringers/:id' do
         @ringer = Ringer.find(params[:id])
+        #binding.pry
         erb :"ringers/show"
     end
 end 

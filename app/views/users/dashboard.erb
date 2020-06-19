@@ -3,11 +3,11 @@
 
 <h4>You have hired:</h4>
 
-<p><% @u.team.ringers.each do |r| %></p>
-    <p><%= r.name %></p>
+<p><% @u.team.ringer_teams.each do |rt| %></p>
+    <p><%= rt.ringer.name %></p> <p>Game Day: <%= rt.game_day.to_s %></p>
     <form action="/ringer_teams" method="post">
         <input type="hidden" name="_method" value="delete">
-        <input type="hidden" name="ringer_id" value="<%= r.id %>%">
+        <input type="hidden" name="ringer_id" value="<%= rt.ringer_id %>%">
         <input type="submit" value="Terminate contract">
     </form> 
     <% end %>
