@@ -11,3 +11,7 @@ class RingerController < ApplicationController
         erb :"ringers/show"
     end
 end 
+#<form action="/ringers" method="post">
+#    <input type="hidden" name="ringer_id" value="<%= r.id %>">
+#    <input type="submit" value=" <%= r.name %>">
+#</form>
