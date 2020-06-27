@@ -10,12 +10,12 @@
         <input type="hidden" name="ringer_id" value="<%= rt.ringer_id %>%">
         <input type="submit" value="Terminate contract">
     </form> 
-    <% end %>
+<% end %>
 
 <h4>Here are our list of Ringers:</h4>
 <ul>
 <% Ringer.all.each do |r|%>
-    <li><a href="/ringers/<%=r.id%>"><%= r.name%></a></li>
+    <li><a href="/ringers/<%= r.id %>"><%= r.name %></a></li>
 <% end %>
 </ul>
 

@@ -46,3 +46,11 @@ end
 #    <input type="hidden" name="user" value="<%= user.session %>%">
 #    <input type="submit" value="Logout">
 #</form>
+###<p><% @u.team.ringer_teams.each do |rt| %></p>
+###    <p><%= rt.ringer.name %></p> <p>Hired on: <%= rt.game_day.to_s %></p>
+###    <form action="/ringer_teams" method="post">
+###        <input type="hidden" name="_method" value="delete">
+###        <input type="hidden" name="ringer_id" value="<%= rt.ringer_id %>%">
+###        <input type="submit" value="Terminate contract">
+###    </form> 
+###<% end %>
