@@ -11,9 +11,13 @@ class SessionsController < ApplicationController
     end
 
     post '/signup' do
-        logged_in_redirect
+        puts "hello from signup"
+        #logged_in_redirect
         @u = User.new(username: params[:username], password: params[:password])
         if @u.save
+            @t = Team.create(name: params[:teamname])
+            @u.team = @t
+            #(name: params[:team])binding.pry
             session[:user_id] = @u.id 
             redirect '/dashboard'
         else
